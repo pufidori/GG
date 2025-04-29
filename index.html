@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loading...</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    .background {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background: url("https://images.steamusercontent.com/ugc/2262562442691574632/41E8822E9FF1FD03E74DED993D0EE8876981149D/") no-repeat center center;
+      background-size: cover;
+      filter: blur(6px) brightness(0.4);
+      z-index: 0;
+    }
+
+    .content {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .content h1 {
+      font-size: 48px;
+      margin: 0 0 10px;
+    }
+
+    .content p {
+      font-size: 18px;
+    }
+
+    .loading-bar {
+      margin-top: 30px;
+      width: 300px;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .loading-progress {
+      width: 100%;
+      height: 100%;
+      background: #0f0;
+      animation: loading 3s linear infinite;
+    }
+
+    @keyframes loading {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="content">
+    <h1>Welcome to the Server</h1>
+    <p>Loading... Please wait.</p>
+    <div class="loading-bar">
+      <div class="loading-progress"></div>
+    </div>
+  </div>
+</body>
+</html>
