@@ -2,74 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Loading...</title>
+  <title>Loading Garry's Mod</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      background: #000;
-      overflow: hidden;
+      height: 100%;
       font-family: Arial, sans-serif;
-      color: white;
+      background-color: #000;
+      overflow: hidden;
     }
 
-    .background {
-      position: absolute;
-      width: 100vw;
-      height: 100vh;
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background: url("https://images.steamusercontent.com/ugc/2262562442691574632/41E8822E9FF1FD03E74DED993D0EE8876981149D/") no-repeat center center;
       background-size: cover;
-      filter: blur(6px) brightness(0.4);
-      z-index: 0;
+      filter: blur(5px) brightness(0.4);
+      z-index: -1;
     }
 
-    .content {
+    .container {
       position: absolute;
-      z-index: 1;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      color: white;
       text-align: center;
     }
 
-    .content h1 {
+    .container h1 {
       font-size: 48px;
       margin: 0 0 10px;
     }
 
-    .content p {
+    .container p {
       font-size: 18px;
     }
 
     .loading-bar {
-      margin-top: 30px;
       width: 300px;
       height: 10px;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.2);
       border-radius: 5px;
+      margin: 20px auto 0;
       overflow: hidden;
     }
 
-    .loading-progress {
-      width: 100%;
+    .bar-fill {
       height: 100%;
-      background: #0f0;
-      animation: loading 3s linear infinite;
+      width: 0%;
+      background: lime;
+      animation: loading 5s infinite linear;
     }
 
     @keyframes loading {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
+      0% { width: 0%; }
+      100% { width: 100%; }
     }
   </style>
 </head>
 <body>
-  <div class="background"></div>
-  <div class="content">
-    <h1>Welcome to the Server</h1>
-    <p>Loading... Please wait.</p>
+  <div class="container">
+    <h1>Loading Garry's Mod...</h1>
+    <p>Please wait while the game starts.</p>
     <div class="loading-bar">
-      <div class="loading-progress"></div>
+      <div class="bar-fill"></div>
     </div>
   </div>
 </body>
